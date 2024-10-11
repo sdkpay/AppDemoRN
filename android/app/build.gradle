@@ -113,6 +113,65 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation files('../libs/fingerprint-1.9.6.aar')
+    implementation files('../libs/spaysdk-debug-2.3.0.aar')
+
+    //libs transitive dependencies implementation
+    implementation 'io.github.sberid:SberIdSDK:2.4.3'
+    implementation 'com.google.dagger:dagger:2.44'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'com.dynatrace.agent:agent-android:8.257.1.1007'
+
+
+    //OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+
+    // Timber
+    def timber_version = '5.0.1'
+
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    // Three Ten BP
+    def threetenbp_version = '1.2.1'
+    def threetenabp_version = '1.2.0'
+
+    implementation "com.jakewharton.threetenabp:threetenabp:$threetenbp_version"
+    testImplementation("org.threeten:threetenbp:${threetenbp_version}") {
+        exclude module: "com.jakewharton.threetenabp:threetenabp:${threetenabp_version}"
+    }
+
+    //coil
+    implementation("io.coil-kt:coil-base:2.4.0")
+    implementation("io.coil-kt:coil-svg:2.4.0")
+
+    //shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    // Firebase Database
+    def firebase_database_version = '20.2.0'
+
+    implementation "com.google.firebase:firebase-database-ktx:$firebase_database_version"
+
+    def biometric_version = '1.1.0'
+    implementation "androidx.biometric:biometric:$biometric_version"
+
+    //Encrypted Shared Preferences
+    def encrypted_shared_preferences_version = '1.1.0-alpha06'
+    implementation "androidx.security:security-crypto:$encrypted_shared_preferences_version"
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.8.0'
+
+    // Lottie
+    implementation 'com.airbnb.android:lottie:6.2.0'
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
