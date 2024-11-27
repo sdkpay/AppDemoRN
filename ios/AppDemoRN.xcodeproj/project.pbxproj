@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* AppDemoRNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AppDemoRNTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-AppDemoRN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-AppDemoRN.a */; };
-		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		4250B78F2C32E84C00D50FB1 /* DemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4250B78E2C32E84C00D50FB1 /* DemoVC.m */; };
 		42613A782C2EEE7600641A1E /* SPayBridgeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 42613A742C2EEE7500641A1E /* SPayBridgeModule.m */; };
 		42613A792C2EEE7600641A1E /* SPayButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42613A762C2EEE7600641A1E /* SPayButtonManager.m */; };
-		42B157ED2CB932C100469256 /* SPaySdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427E9E6B2C3400AE000CAC74 /* SPaySdk.xcframework */; };
-		42B157EE2CB932C100469256 /* SPaySdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 427E9E6B2C3400AE000CAC74 /* SPaySdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42A4AF732CEF166300D3A446 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A4AF722CEF166300D3A446 /* AppDelegate.m */; };
+		42ECDB6A2CE24619004E9B58 /* SPaySdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCEA8C2CBD457E00AA74A4 /* SPaySdk.xcframework */; };
+		42ECDB6B2CE24619004E9B58 /* SPaySdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCEA8C2CBD457E00AA74A4 /* SPaySdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D3333E113DA1F6EF3768039 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D7176B79F2F1879907DE419F /* PrivacyInfo.xcprivacy */; };
 		7699B88040F8A987B510C191 /* libPods-AppDemoRN-AppDemoRNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AppDemoRN-AppDemoRNTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -30,37 +30,16 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = AppDemoRN;
 		};
-		427E9E652C34008A000CAC74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427E9E5E2C34008A000CAC74 /* SPaySdk.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 90297D1325BD54B85B67ECB3;
-			remoteInfo = SPaySdk;
-		};
-		427E9E672C34008A000CAC74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427E9E5E2C34008A000CAC74 /* SPaySdk.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3E49F1E44CE33D7DC962E0A3;
-			remoteInfo = SPaySdkDEBUG;
-		};
-		427E9E692C34008A000CAC74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427E9E5E2C34008A000CAC74 /* SPaySdk.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5E0885C3500458E633451B11;
-			remoteInfo = SPaySdkExample;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		42B157EF2CB932C100469256 /* Embed Frameworks */ = {
+		42ECDB6C2CE24619004E9B58 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				42B157EE2CB932C100469256 /* SPaySdk.xcframework in Embed Frameworks */,
+				42ECDB6B2CE24619004E9B58 /* SPaySdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +52,6 @@
 		00E356F21AD99517003FC87E /* AppDemoRNTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDemoRNTests.m; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* AppDemoRN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDemoRN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AppDemoRN/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = AppDemoRN/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AppDemoRN/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AppDemoRN/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AppDemoRN/main.m; sourceTree = "<group>"; };
@@ -82,13 +60,12 @@
 		3B4392A12AC88292D35C810B /* Pods-AppDemoRN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDemoRN.debug.xcconfig"; path = "Target Support Files/Pods-AppDemoRN/Pods-AppDemoRN.debug.xcconfig"; sourceTree = "<group>"; };
 		4250B78D2C32E75C00D50FB1 /* DemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoVC.h; sourceTree = "<group>"; };
 		4250B78E2C32E84C00D50FB1 /* DemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoVC.m; sourceTree = "<group>"; };
-		42613A702C2EED9F00641A1E /* SPaySdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SPaySdk.xcframework; path = "../../Downloads/sdkpay-static-main/SPaySdk.xcframework"; sourceTree = "<group>"; };
 		42613A742C2EEE7500641A1E /* SPayBridgeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPayBridgeModule.m; sourceTree = "<group>"; };
 		42613A752C2EEE7500641A1E /* SPayBridgeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPayBridgeModule.h; sourceTree = "<group>"; };
 		42613A762C2EEE7600641A1E /* SPayButtonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPayButtonManager.m; sourceTree = "<group>"; };
 		42613A772C2EEE7600641A1E /* SPayButtonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPayButtonManager.h; sourceTree = "<group>"; };
-		427E9E5E2C34008A000CAC74 /* SPaySdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SPaySdk.xcodeproj; path = "../../GitHub/paySDK-ios/SPaySdk.xcodeproj"; sourceTree = "<group>"; };
-		427E9E6B2C3400AE000CAC74 /* SPaySdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SPaySdk.xcframework; path = ../SPaySdk.xcframework; sourceTree = "<group>"; };
+		42A4AF722CEF166300D3A446 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42FCEA8C2CBD457E00AA74A4 /* SPaySdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SPaySdk.xcframework; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-AppDemoRN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDemoRN.release.xcconfig"; path = "Target Support Files/Pods-AppDemoRN/Pods-AppDemoRN.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-AppDemoRN-AppDemoRNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDemoRN-AppDemoRNTests.debug.xcconfig"; path = "Target Support Files/Pods-AppDemoRN-AppDemoRNTests/Pods-AppDemoRN-AppDemoRNTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-AppDemoRN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppDemoRN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-AppDemoRN.a in Frameworks */,
-				42B157ED2CB932C100469256 /* SPaySdk.xcframework in Frameworks */,
+				42ECDB6A2CE24619004E9B58 /* SPaySdk.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +123,7 @@
 				4250B78D2C32E75C00D50FB1 /* DemoVC.h */,
 				4250B78E2C32E84C00D50FB1 /* DemoVC.m */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
-				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
+				42A4AF722CEF166300D3A446 /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -160,24 +137,12 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				427E9E6B2C3400AE000CAC74 /* SPaySdk.xcframework */,
-				427E9E5E2C34008A000CAC74 /* SPaySdk.xcodeproj */,
-				42613A702C2EED9F00641A1E /* SPaySdk.xcframework */,
+				42FCEA8C2CBD457E00AA74A4 /* SPaySdk.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-AppDemoRN.a */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-AppDemoRN-AppDemoRNTests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		427E9E5F2C34008A000CAC74 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				427E9E662C34008A000CAC74 /* SPaySdk.framework */,
-				427E9E682C34008A000CAC74 /* SPaySdkDEBUG.framework */,
-				427E9E6A2C34008A000CAC74 /* SPaySdkExample.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -257,7 +222,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
-				42B157EF2CB932C100469256 /* Embed Frameworks */,
+				42ECDB6C2CE24619004E9B58 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,7 +246,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -296,12 +261,6 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 427E9E5F2C34008A000CAC74 /* Products */;
-					ProjectRef = 427E9E5E2C34008A000CAC74 /* SPaySdk.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* AppDemoRN */,
@@ -309,30 +268,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		427E9E662C34008A000CAC74 /* SPaySdk.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SPaySdk.framework;
-			remoteRef = 427E9E652C34008A000CAC74 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427E9E682C34008A000CAC74 /* SPaySdkDEBUG.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SPaySdkDEBUG.framework;
-			remoteRef = 427E9E672C34008A000CAC74 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427E9E6A2C34008A000CAC74 /* SPaySdkExample.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SPaySdkExample.app;
-			remoteRef = 427E9E692C34008A000CAC74 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
@@ -498,8 +433,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				42613A782C2EEE7600641A1E /* SPayBridgeModule.m in Sources */,
+				42A4AF732CEF166300D3A446 /* AppDelegate.m in Sources */,
 				42613A792C2EEE7600641A1E /* SPayButtonManager.m in Sources */,
 				4250B78F2C32E84C00D50FB1 /* DemoVC.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
@@ -693,10 +628,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -768,10 +700,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

@@ -10,17 +10,17 @@ RCT_EXPORT_METHOD(setupSDK: (NSDictionary *)params
           callback: (RCTResponseSenderBlock)callback)
 {
   SConfig* config = [[SConfig alloc] initWithSbp:params[@"sbp"]
-                     creditCard:params[@"creditCard"]
-                    debitCard:params[@"debitCard"]];
+                                      creditCard:params[@"creditCard"]
+                                       debitCard:params[@"debitCard"]];
   [SPay setupWithBnplPlan:params[@"bnplPlan"]
            spasiboBonuses:params[@"spasiboBonuses"]
-     resultViewNeeded:params[@"resultViewNeeded"]
-          helpers:params[@"helpers"]
-         needLogs:params[@"needLogs"]
-       helperConfig:config
-        environment:environment
-         completion:^(SPError * _Nullable error) {
-  callback(@[error.description ?: [NSNull null]]);
+         resultViewNeeded:params[@"resultViewNeeded"]
+                  helpers:params[@"helpers"]
+                 needLogs:params[@"needLogs"]
+             helperConfig:config
+              environment:environment
+               completion:^(SPError * _Nullable error) {
+    callback(@[error.description ?: [NSNull null]]);
   }];
 }
 
@@ -28,11 +28,6 @@ RCT_EXPORT_METHOD(isReadyForSPay:(RCTResponseSenderBlock)callback)
 {
   bool isReady = [SPay isReadyForSPay];
   callback(@[@(isReady)]);
-}
-
-RCT_EXPORT_METHOD(revokeRefreshToken)
-{
-  [SPay revokeRefreshToken];
 }
 
 RCT_EXPORT_METHOD(payWithBankInvoiceId: (NSDictionary *)params callback: (RCTResponseSenderBlock)callback)
@@ -164,6 +159,16 @@ RCT_EXPORT_METHOD(payWithPartPay: (NSDictionary *)params callback: (RCTResponseS
     }
     return viewController;
   }
+}
+
+RCT_EXPORT_METHOD(setBankScheme: (NSString *)urlString) {
+  NSURL * url = [NSURL URLWithString:urlString];
+  [SPay setBankScheme: url error: NULL];
+}
+
+RCT_EXPORT_METHOD(logout)
+{
+  [SPay logout];
 }
 
 @end

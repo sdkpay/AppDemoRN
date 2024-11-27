@@ -1,4 +1,4 @@
-import {NativeModules} from 'react-native';
+import { Platform, NativeModules } from 'react-native';
 
 export enum SDKEnvironment {
     EnvironmentProd = 0,
@@ -31,8 +31,8 @@ class SPayBridgeModule {
         NativeModules.SPayBridgeModule.isReadyForSPay ((event: boolean) => fn(event));
     }
 
-    static revokeRefreshToken() {
-        NativeModules.SPayBridgeModule.revokeRefreshToken();
+    static logout() {
+        NativeModules.SPayBridgeModule.logout();
     }    
 
     static payWithBankInvoiceId(requestParams: {
@@ -84,6 +84,16 @@ class SPayBridgeModule {
             requestParams,
             (error: any, event: string) => fn(error, event)
         )
+    }
+
+    static androidCheckPermissions(fn: (flag: boolean, array: Array<String>) => void) {
+        if (Platform.OS === 'ios') return
+        NativeModules.SPayBridgeModule.checkPermissions ((flag: boolean, array: Array<String>) => fn(flag, array));
+    }
+
+    static iosSetBankScheme(urlString: string) {
+        if (Platform.OS === 'android') return
+        NativeModules.SPayBridgeModule.setBankScheme(urlString)
     }
 }
 

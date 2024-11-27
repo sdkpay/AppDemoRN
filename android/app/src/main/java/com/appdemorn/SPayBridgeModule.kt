@@ -1,10 +1,16 @@
 package com.appdemorn
 
+import android.Manifest.permission.ACCESS_FINE_LOCATION
+import android.util.Log
+import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.Callback
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
+import com.facebook.react.bridge.ReadableNativeArray
+import com.facebook.react.bridge.ReadableNativeMap
 import spay.sdk.SPaySdkApp
 import spay.sdk.SPaySdkInitConfig
 import spay.sdk.api.InitializationResult
@@ -12,6 +18,7 @@ import spay.sdk.api.PaymentResult
 import spay.sdk.api.SPayHelperConfig
 import spay.sdk.api.SPayHelpers
 import spay.sdk.api.SPayStage
+//import spay.sdk.di.qualifier.logWriter.Console
 
 class SPayBridgeModule(reactContext: ReactApplicationContext) :
     ReactContextBaseJavaModule(reactContext) {
@@ -51,11 +58,6 @@ class SPayBridgeModule(reactContext: ReactApplicationContext) :
             activity?.application ?: throw IllegalArgumentException("The activity is not initialized")
         )
         callBack.invoke(result)
-    }
-
-    @ReactMethod
-    fun revokeRefreshToken() {
-        SPaySdkApp.getInstance().dropAuthentication()
     }
 
     @ReactMethod
@@ -169,6 +171,21 @@ class SPayBridgeModule(reactContext: ReactApplicationContext) :
         } catch (e: Exception) {
             callBack.invoke("error exception", e.toString())
         }
+    }
+
+    @ReactMethod
+    fun checkPermissions(callBack: Callback) {
+        val activity = currentActivity
+        val result = SPaySdkApp.getInstance().checkPermissions(
+            activity?.application ?: throw IllegalArgumentException("The activity is not initialized")
+        )
+        val writableArray = Arguments.fromArray(result.second.toTypedArray())
+        callBack.invoke(result.first, writableArray)
+    }
+
+    @ReactMethod
+    fun logout() {
+        SPaySdkApp.getInstance().logout()
     }
 
     companion object {

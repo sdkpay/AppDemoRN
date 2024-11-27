@@ -114,8 +114,10 @@ dependencies {
         implementation jscFlavor
     }
 
+//    implementation "ru.spaymentsplus.libraries:spaysdk:2.4.+"
+
     implementation files('../libs/fingerprint-1.9.6.aar')
-    implementation files('../libs/spaysdk-debug-2.3.0.aar')
+    implementation files('../libs/spaysdk-2.4.0.aar')
 
     //libs transitive dependencies implementation
     implementation 'io.github.sberid:SberIdSDK:2.4.3'

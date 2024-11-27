@@ -7,7 +7,7 @@
 
 import React from 'react';
 import type {PropsWithChildren} from 'react';
-import SPayButton from './SPayButtonView.js';
+import SPayButton from './SPayButtonView';
 import SPayBridgeModule from './SPayBridgeModule';
 import { SDKEnvironment } from './SPayBridgeModule';
 
@@ -77,8 +77,8 @@ function App(): JSX.Element {
               onPress={ isReadyForSPay }
             />
             <Button 
-              title='revoke refresh token'
-              onPress={ revokeToken }
+              title='logout'
+              onPress={ logout }
             />
           </Section>
           <Section title="Auto pay method:">
@@ -98,6 +98,20 @@ function App(): JSX.Element {
               title='payWithPartPay action'
               onPress={ payWithPartPay }
               />
+          </Section>
+          <Section title="Android methods:">
+            <Button 
+              title='checkPermissions action'
+              onPress={ androidCheckPermissions }
+              />
+              
+          </Section>
+          <Section title="iOS methods:">
+            <Button 
+              title='setBankScheme action'
+              onPress={ iosSetBankScheme }
+              />
+              
           </Section>
           <Section title="Native button:">
           <TouchableHighlight onPress={onPressSPayButton} underlayColor="white">
@@ -146,9 +160,23 @@ function isReadyForSPay() {
   })
 }
 
-function revokeToken() {
-  SPayBridgeModule.revokeRefreshToken()
-  Alert.alert('Revoked refresh token successful')
+function logout() {
+  SPayBridgeModule.logout()
+  Alert.alert('Logout - Revoked local refresh token successful')
+}
+
+function androidCheckPermissions() {
+  SPayBridgeModule.androidCheckPermissions( 
+    (flag: boolean, array: Array<String>) => {
+      console.log(`array strings is ${array}`)
+      Alert.alert(`permissions: ${flag}`)
+  })
+}
+
+function iosSetBankScheme() {
+  let urlString = "sbol"
+  SPayBridgeModule.iosSetBankScheme(urlString)
+  Alert.alert(`setBankScheme action`)
 }
 
 function payWithBankInvoiceId() {
