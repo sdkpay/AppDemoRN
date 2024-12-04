@@ -10,11 +10,31 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+
+
     }
     dependencies {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/sdkpay/SPayAndroidSdkPackages")
+            credentials {
+                username = "username"
+                password = "password"
+            }
+        }
+        configurations.all {
+            resolutionStrategy{
+                force "com.google.android.gms:play-services-location:20.0.0"
+            }
+        }
     }
 }
 

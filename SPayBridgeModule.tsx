@@ -14,9 +14,11 @@ class SPayBridgeModule {
                         resultViewNeeded: boolean,
                         helpers: boolean,
                         needLogs: boolean,
+                        enableOutsideTouchCancelling: boolean,
                         sbp: boolean,
                         creditCard: boolean,
-                        debitCard: boolean
+                        debitCard: boolean,
+                        bnpl: boolean
                     },
                     environment: SDKEnvironment,
                     fn: (errorString: string) => void) {

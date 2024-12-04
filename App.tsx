@@ -136,9 +136,11 @@ function setupSDK() {
     'resultViewNeeded': true,
     'helpers': true,
     'needLogs': true,
+    'enableOutsideTouchCancelling': true,
     'sbp': false,
     'creditCard': true,
-    'debitCard': false
+    'debitCard': false,
+    'bnpl': false
   }
   let environment = SDKEnvironment.EnvironmentProd
   SPayBridgeModule.setupSDK(

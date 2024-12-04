@@ -30,18 +30,27 @@ class SPayBridgeModule(reactContext: ReactApplicationContext) :
     fun setupSDK(params: ReadableMap, environment: Int,  callBack: Callback) {
         val activity = currentActivity
         val listOfHelpers = mutableListOf<SPayHelpers>()
+        listOfHelpers.apply {
+            if (!params.getBoolean("sbp")) add(SPayHelpers.SBP)
+            if (!params.getBoolean("creditCard")) add(SPayHelpers.CREDIT_CARD)
+            if (!params.getBoolean("debitCard")) add(SPayHelpers.DEBIT_CARD)
+            if (!params.getBoolean("bnpl")) add(SPayHelpers.BNPL)
+        }
+
         val stage = when (environment) {
             1 -> SPayStage.SandBoxWithoutBankApp
             2 -> SPayStage.SandboxRealBankApp
             else -> SPayStage.Prod
         }
         val config = SPaySdkInitConfig(
-            activity?.application ?: throw IllegalArgumentException("The activity is not initialized"),
-            params.getBoolean("bnplPlan"),
-            stage,
-            SPayHelperConfig(params.getBoolean("helpers"), listOfHelpers),
-            params.getBoolean("resultViewNeeded"),
-            params.getBoolean("needLogs")
+            application = activity?.application ?: throw IllegalArgumentException("The activity is not initialized"),
+            enableBnpl = params.getBoolean("bnplPlan"),
+            stage = stage,
+            helperConfig = SPayHelperConfig(params.getBoolean("helpers"), listOfHelpers),
+            spasiboBonuses = params.getBoolean("spasiboBonuses"),
+            resultViewNeeded = params.getBoolean("resultViewNeeded"),
+            enableLogging = params.getBoolean("needLogs"),
+            enableOutsideTouchCancelling = params.getBoolean("enableOutsideTouchCancelling")
         ) { initializationResult ->
             when (initializationResult) {
                 is InitializationResult.Success -> callBack.invoke()
